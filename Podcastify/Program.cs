@@ -3,11 +3,9 @@ using Podcastify.Application.Services.PodcastServices;
 using Podcastify.Core.Repositories.Base;
 using Podcastify.Infrastructure.Data;
 using Podcastify.Infrastructure.Repositories.Base;
-using AutoMapper;
 using Podcastify.API.Helpers.ExceptionHandlers;
 using Podcastify.Application.Services.FileServices;
-using Podcastify.Core.Repositories;
-using Podcastify.Infrastructure.Repositories;
+using Podcastify.Application.Services.Review_Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IPodcastService, PodcastService>();
 builder.Services.AddScoped<IFileService, FileService>();
-builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+builder.Services.AddScoped<IReviewService, ReviewService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
